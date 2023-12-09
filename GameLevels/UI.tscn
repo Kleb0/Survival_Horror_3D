@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgv2esohronrl"]
+
+[ext_resource type="Theme" uid="uid://s3nn2aorqhoo" path="res://tutoriels_ressources/Themes/new_theme.theme" id="1_uqem1"]
+
+[node name="TESTUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Button Controller" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Enable_Temperature_Overlay" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/Button Controller"]
+texture_filter = 1
+layout_mode = 1
+offset_left = -322.0
+offset_top = 6.0
+offset_right = -183.0
+offset_bottom = 83.0
+theme = ExtResource("1_uqem1")
+text = "ENABLE
+TEMPERATURE
+OVERLAY"
+
+[node name="HBoxContainer_Panel" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer_Panel"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="PanelController" type="Control" parent="MarginContainer/HBoxContainer_Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer_Panel/VBoxContainer/PanelController"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -179.0
+offset_bottom = 131.0
+grow_horizontal = 0
+
+[node name="Text" type="Label" parent="MarginContainer/HBoxContainer_Panel/VBoxContainer/PanelController/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -36.0
+offset_right = 62.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CURRENT GAME
+STATE"
+horizontal_alignment = 1
+vertical_alignment = 1

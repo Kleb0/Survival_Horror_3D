@@ -1,0 +1,176 @@
+[gd_scene load_steps=19 format=3 uid="uid://lq0necitluak"]
+
+[ext_resource type="Script" path="res://Scripts/First_stage_scripts/GameManager_StateMachine_Scripts/StateMachine_GameManager.gd" id="1_iuqs4"]
+[ext_resource type="PackedScene" uid="uid://dgv2esohronrl" path="res://GameLevels/UI.tscn" id="2_ckxqy"]
+[ext_resource type="Script" path="res://Scripts/First_stage_scripts/GameManager_StateMachine_Scripts/NormalMode.gd" id="2_e2ojh"]
+[ext_resource type="Script" path="res://Scripts/First_stage_scripts/GameManager_StateMachine_Scripts/TemperatureOverlayMode.gd" id="3_quk36"]
+[ext_resource type="PackedScene" uid="uid://bob0l3ck8xelv" path="res://GameObjects/Test_Character/scene/test_character_character_body_3d.tscn" id="5_5ms6y"]
+[ext_resource type="PackedScene" uid="uid://bwbf77weojx7m" path="res://GameObjects/Apple/Apple.glb" id="6_geggi"]
+[ext_resource type="Script" path="res://GameObjects/Apple/Apple.gd" id="7_reu7a"]
+[ext_resource type="PackedScene" uid="uid://bsdbgx6jfwbvd" path="res://Inventory/inventory.tscn" id="8_fo88h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fyasu"]
+sky_top_color = Color(0.643137, 0.745098, 0.996078, 1)
+sky_horizon_color = Color(0.141176, 0.741176, 0.784314, 1)
+ground_bottom_color = Color(0, 0.792157, 0.513726, 1)
+
+[sub_resource type="Sky" id="Sky_ygokj"]
+sky_material = SubResource("ProceduralSkyMaterial_fyasu")
+
+[sub_resource type="Environment" id="Environment_rpa13"]
+background_mode = 2
+sky = SubResource("Sky_ygokj")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_nbvls"]
+vertices = PackedVector3Array(-1.98074, 0.509572, -1.99944, -1.48074, 0.509572, -1.99944, -1.48074, 0.509572, -8.24944, -8.23074, 0.509572, -8.24944, -8.23074, 0.509572, -2.24944, -1.48074, 0.509572, -8.24944, -1.48074, 0.509572, -1.99944, -0.730741, 0.509572, -1.99944, -1.48074, 0.509572, -8.24944, -0.730741, 0.509572, -1.99944, -0.480741, 0.509572, -0.999439, 8.26926, 0.509572, -0.999439, 8.26926, 0.509572, -8.24944, -2.98074, 0.509572, 3.25056, -1.98074, 0.509572, 0.00056076, -2.48074, 0.509572, -0.249439, -4.73074, 0.509572, 3.25056, -3.73074, 0.509572, 8.25056, -3.73074, 0.509572, 4.75056, -4.73074, 0.509572, 4.50056, -8.23074, 0.509572, 8.25056, -2.48074, 0.509572, -1.74944, -1.98074, 0.509572, -1.99944, -8.23074, 0.509572, -2.24944, -8.23074, 0.509572, 8.25056, -4.73074, 0.509572, 4.50056, -4.73074, 0.509572, 3.25056, -4.73074, 0.509572, 3.25056, -2.48074, 0.509572, -0.249439, -2.48074, 0.509572, -1.74944, -8.23074, 0.509572, -2.24944, -8.23074, 0.509572, 8.25056, -2.98074, 0.509572, 4.50056, -3.73074, 0.509572, 4.75056, -3.73074, 0.509572, 8.25056, -0.730741, 0.509572, 0.00056076, -1.98074, 0.509572, 0.00056076, -2.98074, 0.509572, 3.25056, -2.98074, 0.509572, 4.50056, 8.26926, 0.509572, -0.999439, -0.480741, 0.509572, -0.999439, -0.730741, 0.509572, 0.00056076, -0.730741, 0.509572, 0.00056076, -2.98074, 0.509572, 4.50056, -3.73074, 0.509572, 8.25056, 8.26926, 0.509572, 8.25056, 8.26926, 0.509572, -0.999439)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(7, 6, 5), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(11, 8, 12), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(23, 22, 21), PackedInt32Array(26, 25, 24), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(30, 27, 31), PackedInt32Array(34, 33, 32), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(41, 40, 39), PackedInt32Array(43, 42, 44), PackedInt32Array(44, 42, 46), PackedInt32Array(44, 46, 45)]
+agent_height = 2.0
+agent_max_slope = 50.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rfbc4"]
+albedo_color = Color(0.211765, 0.603922, 0.0823529, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hn3fd"]
+lightmap_size_hint = Vector2i(12, 12)
+material = SubResource("StandardMaterial3D_rfbc4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oc8u5"]
+size = Vector3(2.03466, 0.0347103, 2.01058)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3oi1j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k7rha"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lqwc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Environnement" type="Node3D"]
+metadata/_edit_horizontal_guides_ = [-93.0]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rpa13")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["Camera"]]
+transform = Transform3D(0.2282, -0.435745, 0.870661, 0.0650724, 0.899083, 0.432915, -0.971437, -0.0421352, 0.233526, 1.71352, 1.4164, 0.849192)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.708453, -0.312329, 0.632886, -0.70336, -0.238597, 0.669594, -0.0581287, -0.919523, -0.388715, 3.65241, 4.76626, 0.596123)
+light_energy = 1.987
+
+[node name="GameManager" type="Node" parent="."]
+
+[node name="StateMachine_GameManager" type="Node" parent="GameManager" node_paths=PackedStringArray("buttonEnable", "labelText")]
+script = ExtResource("1_iuqs4")
+buttonEnable = NodePath("../../Game_Test_UI/MarginContainer/HBoxContainer/VBoxContainer/Button Controller/Enable_Temperature_Overlay")
+labelText = NodePath("../../Game_Test_UI/MarginContainer/HBoxContainer_Panel/VBoxContainer/PanelController/Panel/Text")
+
+[node name="Normal_Mode" type="Node" parent="GameManager/StateMachine_GameManager"]
+script = ExtResource("2_e2ojh")
+
+[node name="Temperature_Overlay" type="Node" parent="GameManager/StateMachine_GameManager"]
+script = ExtResource("3_quk36")
+
+[node name="Game_Test_UI" parent="." instance=ExtResource("2_ckxqy")]
+
+[node name="VBoxContainer" parent="Game_Test_UI/MarginContainer/HBoxContainer" index="0"]
+size_flags_vertical = 0
+
+[node name="Enable_Temperature_Overlay" parent="Game_Test_UI/MarginContainer/HBoxContainer/VBoxContainer/Button Controller" index="0" groups=["UI"]]
+
+[node name="test_character_CharacterBody3D" parent="." instance=ExtResource("5_5ms6y")]
+transform = Transform3D(-0.999429, 0, 0.0338005, 0, 1, 0, -0.0338005, 0, -0.999429, 0.0155426, 0.30921, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(2.51837, 0, 0, 0, 2.51837, 0, 0, 0, 2.51837, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_nbvls")
+
+[node name="Ground" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(8.69867, 0, 0, 0, 8.69867, 0, 0, 0, 8.69867, -0.032071, 0.114712, -0.0507698)
+mesh = SubResource("PlaneMesh_hn3fd")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Ground/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00252175, -0.0150473, 0.00526119)
+shape = SubResource("BoxShape3D_oc8u5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(0.552831, 0, 0, 0, 0.552831, 0, 0, 0, 0.552831, -3.93977, 0.285987, 3.83928)
+mesh = SubResource("BoxMesh_3oi1j")
+skeleton = NodePath("../Ground")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_k7rha")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(0.552831, 0, 0, 0, 0.966839, 0, 0, 0, 0.552831, -1.48106, 0.497928, -0.998586)
+mesh = SubResource("BoxMesh_3oi1j")
+skeleton = NodePath("../Ground")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_k7rha")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.39223, 0, 0, 0, 1.39223, 0, 0, 0, 1.39223, 11.633, 0.0142858, 9.66874)
+mesh = SubResource("BoxMesh_3oi1j")
+skeleton = NodePath("../../NavigationRegion3D/Ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_5lqwc")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.39223, 0, 0, 0, 1.39223, 0, 0, 0, 1.39223, 11.633, 0.0142858, -0.507003)
+mesh = SubResource("BoxMesh_3oi1j")
+skeleton = NodePath("../../NavigationRegion3D/Ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_5lqwc")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.39223, 0, 0, 0, 1.39223, 0, 0, 0, 1.39223, 3.46974, 0.0142858, -0.507003)
+mesh = SubResource("BoxMesh_3oi1j")
+skeleton = NodePath("../../NavigationRegion3D/Ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_5lqwc")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.39223, 0, 0, 0, 1.39223, 0, 0, 0, 1.39223, -6.14158, 0.0142858, -0.507003)
+mesh = SubResource("BoxMesh_3oi1j")
+skeleton = NodePath("../../NavigationRegion3D/Ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_5lqwc")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.39223, 0, 0, 0, 1.39223, 0, 0, 0, 1.39223, -5.57247, 0.0142858, 9.66874)
+mesh = SubResource("BoxMesh_3oi1j")
+skeleton = NodePath("../../NavigationRegion3D/Ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_5lqwc")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.39223, 0, 0, 0, 1.39223, 0, 0, 0, 1.39223, 1.49225, 0.0142858, 9.66874)
+mesh = SubResource("BoxMesh_3oi1j")
+skeleton = NodePath("../../NavigationRegion3D/Ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_5lqwc")
+
+[node name="Apple" parent="." instance=ExtResource("6_geggi")]
+transform = Transform3D(1.87226, -0.000630316, -0.0291435, -5.42967e-11, 1.87205, -0.0404887, 0.0291503, 0.0404838, 1.87182, 0, 0.5, 1.5)
+script = ExtResource("7_reu7a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory_Interface" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Player_Inventory" parent="CanvasLayer/Inventory_Interface" instance=ExtResource("8_fo88h")]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 60.0
+
+[connection signal="pressed" from="Game_Test_UI/MarginContainer/HBoxContainer/VBoxContainer/Button Controller/Enable_Temperature_Overlay" to="GameManager/StateMachine_GameManager" method="_on_Enable_Temp_Overlay_Pressed"]
+
+[editable path="Game_Test_UI"]
