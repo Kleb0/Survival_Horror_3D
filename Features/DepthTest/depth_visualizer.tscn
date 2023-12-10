@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cynq70oqwmgfi"]
 
-[ext_resource type="Shader" path="res://DepthTest/depth_visualizer .gdshader" id="1_7lg60"]
+[ext_resource type="Shader" path="res://features/DepthTest/depth_visualizer .gdshader" id="1_7lg60"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_p6ijb"]
 

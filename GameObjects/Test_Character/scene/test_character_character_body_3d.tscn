@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://bob0l3ck8xelv"]
 
-[ext_resource type="Script" path="res://Scripts/First_stage_scripts/relativeToPlayer_Scripts/ClickToMove.gd" id="1_hnm1u"]
+[ext_resource type="Script" path="res://features/MainCharacter_Movement/ClickToMove.gd" id="1_hnm1u"]
 [ext_resource type="Texture2D" uid="uid://id61nn7rtyk2" path="res://GameObjects/Test_Character/test_character_Sprite.png" id="2_bp2u0"]
-[ext_resource type="Script" path="res://Scripts/First_stage_scripts/relativeToPlayer_Scripts/Player_Statemachine_Scripts/MainCharacterStateMachine.gd" id="4_2cklh"]
-[ext_resource type="Script" path="res://Scripts/First_stage_scripts/relativeToPlayer_Scripts/Player_Statemachine_Scripts/Player_idle.gd" id="5_u46ri"]
-[ext_resource type="Script" path="res://Scripts/First_stage_scripts/relativeToPlayer_Scripts/Player_Statemachine_Scripts/Player_Walk.gd" id="6_vr8jw"]
+[ext_resource type="Script" path="res://features/MainCharacter_Movement/Player_Statemachine_Scripts/MainCharacterStateMachine.gd" id="4_2cklh"]
+[ext_resource type="Script" path="res://features/MainCharacter_Movement/Player_Statemachine_Scripts/Player_idle.gd" id="5_u46ri"]
+[ext_resource type="Script" path="res://features/MainCharacter_Movement/Player_Statemachine_Scripts/Player_Walk.gd" id="6_vr8jw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vh42"]
 resource_name = "Test_Character.mat"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cfp3kfdyuh0vg"]
 
-[ext_resource type="Script" path="res://Scripts/First_stage_scripts/HeatVisualizer_Scripts/Heat_controller.gd" id="1_rgl2y"]
+[ext_resource type="Script" path="res://features/HeatVisualizerSystem/HeatVisualizer_Scripts/Heat_controller.gd" id="1_rgl2y"]
 
 [node name="Heat_controller" type="Node3D"]
 transform = Transform3D(5.14042, 0, 0, 0, 2.42897e-15, -5.23659, 0, 10.9391, 1.16276e-15, 0.520429, -0.0623942, -0.280495)

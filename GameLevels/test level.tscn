@@ -1,13 +1,13 @@
 [gd_scene load_steps=19 format=3 uid="uid://lq0necitluak"]
 
-[ext_resource type="Script" path="res://Scripts/First_stage_scripts/GameManager_StateMachine_Scripts/StateMachine_GameManager.gd" id="1_iuqs4"]
+[ext_resource type="Script" path="res://features/GameManager_StateMachine/GameManager_StateMachine_Scripts/StateMachine_GameManager.gd" id="1_iuqs4"]
 [ext_resource type="PackedScene" uid="uid://dgv2esohronrl" path="res://GameLevels/UI.tscn" id="2_ckxqy"]
-[ext_resource type="Script" path="res://Scripts/First_stage_scripts/GameManager_StateMachine_Scripts/NormalMode.gd" id="2_e2ojh"]
-[ext_resource type="Script" path="res://Scripts/First_stage_scripts/GameManager_StateMachine_Scripts/TemperatureOverlayMode.gd" id="3_quk36"]
+[ext_resource type="Script" path="res://features/GameManager_StateMachine/GameManager_StateMachine_Scripts/NormalMode.gd" id="2_e2ojh"]
+[ext_resource type="Script" path="res://features/GameManager_StateMachine/GameManager_StateMachine_Scripts/TemperatureOverlayMode.gd" id="3_quk36"]
 [ext_resource type="PackedScene" uid="uid://bob0l3ck8xelv" path="res://GameObjects/Test_Character/scene/test_character_character_body_3d.tscn" id="5_5ms6y"]
 [ext_resource type="PackedScene" uid="uid://bwbf77weojx7m" path="res://GameObjects/Apple/Apple.glb" id="6_geggi"]
 [ext_resource type="Script" path="res://GameObjects/Apple/Apple.gd" id="7_reu7a"]
-[ext_resource type="PackedScene" uid="uid://bsdbgx6jfwbvd" path="res://Inventory/inventory.tscn" id="8_fo88h"]
+[ext_resource type="PackedScene" path="res://Inventory/inventory.tscn" id="8_fo88h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fyasu"]
 sky_top_color = Color(0.643137, 0.745098, 0.996078, 1)

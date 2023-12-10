@@ -40,52 +40,44 @@ func _input(event):
 
 	if event is InputEventMouseButton and event.pressed:
 		if Input.is_action_pressed("MoveTo"):
-			print("Button Left Mouse pressed")
-			if event.pressed:			
+			#print("Button Left Mouse pressed")
+			if event.pressed:		
 
-				print("Func reached line 46")
-				#first check if we are clicking on a button
+				var rayLength = 100
+				var rayOrigin = camera.project_ray_origin(global_mouse_position)
+				var rayEnd = rayOrigin + camera.project_ray_normal(global_mouse_position) * rayLength
+				var space = get_world_3d().direct_space_state
+				var rayQuery = PhysicsRayQueryParameters3D.new()
+				rayQuery.from = rayOrigin
+				rayQuery.to = rayEnd
+				var rayResult = space.intersect_ray(rayQuery)
 
+				#check if raycast has position
 				for button in get_tree().get_nodes_in_group("UI"):
 
 					if button.get_global_rect().has_point(global_mouse_position):
-						return
-					elif global_mouse_position.x < margin or global_mouse_position.y < margin or global_mouse_position.x > screen_size.x - margin or global_mouse_position.y > screen_size.y - margin:
-						print("mouse out of bounds")
-						return	
+						#print("clicked on button")
+						target_Position = Vector3.ZERO
+						navigationAgent.set_target_position(Vector3.ZERO)				
+					
+					if global_mouse_position.x < margin or global_mouse_position.y < margin or global_mouse_position.x > screen_size.x - margin or global_mouse_position.y > screen_size.y - margin:
+						#print("mouse out of bounds")
+						target_Position = Vector3.ZERO
+						navigationAgent.set_target_position(Vector3.ZERO)
 
-				#if not clicking on a button, then move to the clicked position	
+				if rayResult.has("position"):
+					#print("rayResult.position is " + str(rayResult.position))
+					target_Position = rayResult.position
+					navigationAgent.set_target_position(rayResult.position)
+				else:
+					#print("rayResult.position is null")
+					return 																	
 
-					else:
-						print("Func reached line 60")
-						
-						#now we need to check if we are clicking on a 3d object
-						var rayLength = 100
-						var rayOrigin = camera.project_ray_origin(global_mouse_position)
-						var rayEnd = rayOrigin + camera.project_ray_normal(global_mouse_position) * rayLength
-						var space = get_world_3d().direct_space_state
-						var rayQuery = PhysicsRayQueryParameters3D.new()
-						rayQuery.from = rayOrigin
-						rayQuery.to = rayEnd
-						var rayResult = space.intersect_ray(rayQuery)
-						target_Position = rayResult.position
-						navigationAgent.set_target_position(rayResult.position)																			
-						print(" navigation agent target position is " + str(navigationAgent.get_target_position()))
-						print(self.name + " position is :" + str(self.global_position.y))	
-						
-						# check if we hit something
-						#if rayResult.has("position"):
-												
-						#else:
-							#print("no hit")
-							#return	
-
-func moveToPoint(delta, speed):	
+func moveToPoint(delta, speedvalue):	
 	var direction = global_position.direction_to(target_Position)
 	faceDirection(target_Position)
-	velocity = direction * speed
-	move_and_collide(velocity * delta)
-	
+	velocity = direction * speedvalue
+	move_and_collide(velocity * delta)	
 
 func faceDirection(direction):
 	look_at(Vector3(direction.x, global_position.y, direction.z), Vector3.UP)
