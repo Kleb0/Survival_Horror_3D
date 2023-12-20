@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://8k75h8rf0fge"]
+
+[ext_resource type="Script" path="res://Features/Inventory/Scripts/Inventory.gd" id="1_tbpx7"]
+
+[node name="Inventory" type="PanelContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tbpx7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 6
+
+[node name="AvailableSlotNumber" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "100"
+
+[node name="Timer" type="Timer" parent="."]

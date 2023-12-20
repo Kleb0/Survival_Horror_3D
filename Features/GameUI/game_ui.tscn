@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://bju7tisxf8bcp"]
+
+[ext_resource type="PackedScene" uid="uid://8k75h8rf0fge" path="res://Features/Inventory/Scenes_Visual_represetentation/inventory.tscn" id="1_vjg0u"]
+
+[node name="GameUI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Enable_Temperature_Overlay" type="Button" parent="Control/MarginContainer/HBoxContainer" groups=["UI"]]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "ENABLE 
+TEMPERATURE 
+OVERLAY"
+
+[node name="Control" type="Control" parent="Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Panel" type="Panel" parent="Control/MarginContainer/HBoxContainer/Control"]
+custom_minimum_size = Vector2(180, 64)
+layout_mode = 2
+offset_left = 94.0
+offset_top = -2.0
+offset_right = 214.0
+offset_bottom = 75.0
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="Current_Game_State_Text" type="Label" parent="Control/MarginContainer/HBoxContainer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -22.5
+offset_right = 53.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.893554, 0.920092)
+text = "CURRENT
+GAME STATE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Inventory" parent="Control/MarginContainer/HBoxContainer2" groups=["UI"] instance=ExtResource("1_vjg0u")]
+layout_mode = 2
+size_flags_vertical = 0

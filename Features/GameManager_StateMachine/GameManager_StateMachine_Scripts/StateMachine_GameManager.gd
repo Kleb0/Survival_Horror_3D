@@ -16,9 +16,13 @@ func _ready():
 	labelText.text = current_state.name
 	
 
+func on_Game_Start():
+	#current state is the first element of the state dictionary on start which is "Normal_Mode"
+	current_state = states.get(states.keys()[0])
 
-func _on_Enable_Temp_Overlay_Pressed():
-	
+
+func _on_enable_temperature_overlay_pressed():
+	print("button pressed")
 	if (current_state.name == "Normal_Mode"):
 		buttonEnable.set_text("DISABLE \nTEMPERATURE \nOVERLAY")
 		buttonEnable.alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -33,10 +37,3 @@ func _on_Enable_Temp_Overlay_Pressed():
 		labelText.text = current_state.name
 
 	emit_signal("state_changed")	
-	
-
-func on_Game_Start():
-	#current state is the first element of the state dictionary on start which is "Normal_Mode"
-	current_state = states.get(states.keys()[0])
-
-

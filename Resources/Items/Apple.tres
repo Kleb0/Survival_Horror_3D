@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dijcuw0jhol7b"]
+
+[ext_resource type="Script" path="res://Features/Inventory/Scripts/item_data.gd" id="1_ype7h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jrtpo"]
+load_path = "res://.godot/imported/Apple.png-3a384274436b2e2ca3ba10f24b256c02.bptc.ctex"
+
+[resource]
+script = ExtResource("1_ype7h")
+name = "Apple"
+description = "A great Apple"
+stackable = true
+texture = SubResource("CompressedTexture2D_jrtpo")
