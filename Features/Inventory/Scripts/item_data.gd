@@ -5,3 +5,5 @@ class_name ItemData
 @export_multiline var description = ""
 @export var stackable: bool = false
 @export var texture : Texture
+@export var isMultipleSlot : bool = false
+@export var multipleSlotSize : int = 0

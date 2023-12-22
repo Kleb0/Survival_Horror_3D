@@ -11,3 +11,5 @@ name = "Apple"
 description = "A great Apple"
 stackable = true
 texture = SubResource("CompressedTexture2D_jrtpo")
+isMultipleSlot = false
+multipleSlotSize = 0

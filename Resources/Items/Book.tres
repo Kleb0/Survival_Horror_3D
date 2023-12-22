@@ -11,3 +11,5 @@ name = "Blue Book"
 description = "A Great Blue Book"
 stackable = true
 texture = SubResource("CompressedTexture2D_0dcab")
+isMultipleSlot = false
+multipleSlotSize = 0

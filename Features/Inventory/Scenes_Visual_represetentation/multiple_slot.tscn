@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://lryoopuoee3u"]
+
+[ext_resource type="Script" path="res://Features/Inventory/Scripts/slot.gd" id="1_w85g3"]
+
+[node name="multiple_slot" type="MarginContainer"]
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 6
+
+[node name="Slot" type="PanelContainer" parent="GridContainer" node_paths=PackedStringArray("texture_rect", "quantity_label", "color_rect", "timer", "multi_slot_Rect")]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("1_w85g3")
+texture_rect = NodePath("MarginContainer/TextureRect")
+quantity_label = NodePath("QuantityLabel")
+color_rect = NodePath("MarginContainer/TextureRect/Control/ColorRect")
+timer = NodePath("Timer")
+originalRectColor = Color(0, 0, 0, 0)
+multi_slot_Rect = NodePath("MarginContainer/TextureRect/Control/multi_slot_Rect")
+
+[node name="MarginContainer" type="MarginContainer" parent="GridContainer/Slot"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Slot/MarginContainer"]
+y_sort_enabled = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="Control" type="Control" parent="GridContainer/Slot/MarginContainer/TextureRect"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 52.0
+offset_bottom = 52.0
+mouse_filter = 1
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Slot/MarginContainer/TextureRect/Control"]
+layout_mode = 0
+offset_left = 2.99402
+offset_top = 2.0
+offset_right = 42.994
+offset_bottom = 42.0
+scale = Vector2(1.43814, 1.4616)
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[node name="multi_slot_Rect" type="ColorRect" parent="GridContainer/Slot/MarginContainer/TextureRect/Control"]
+z_index = -1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 43.0
+offset_bottom = 42.0
+scale = Vector2(1.43814, 1.4616)
+mouse_filter = 1
+color = Color(1, 0, 1, 0.298039)
+
+[node name="QuantityLabel" type="Label" parent="GridContainer/Slot"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "*99"
+
+[node name="Timer" type="Timer" parent="GridContainer/Slot"]
+wait_time = 0.1
+
+[connection signal="gui_input" from="GridContainer/Slot" to="GridContainer/Slot" method="_on_gui_input" flags=18]
