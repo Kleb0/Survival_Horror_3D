@@ -1,6 +1,148 @@
-[gd_scene load_steps=2 format=3 uid="uid://lryoopuoee3u"]
+[gd_scene load_steps=2 format=3 uid="uid://cq1b3uxoix7v5"]
 
-[ext_resource type="Script" path="res://Features/Inventory/Scripts/slot.gd" id="1_w85g3"]
+[sub_resource type="GDScript" id="GDScript_m5qud"]
+script/source = "#that script as its extends PanelContainer is in charge of the visual representation of a slot and its functionalities + datas
+#we connect the gui_input event to signal slot_clicked, signal also connected in the inventory data and in the inventory GG script
+#structure is :
+# --- | SlotGD | --> | InventoryGD | --> | InventoryData |
+
+extends PanelContainer
+
+var hold_item_data : ItemData
+
+@export var texture_rect: TextureRect 
+@export var quantity_label: Label 
+@export var slot_Index_Text : Label
+@export var color_rect: ColorRect
+@export var timer: Timer 
+@export var originalRectColor : Color
+@export var multi_slot_Rect : ColorRect
+
+@export var valide_slot : TextureRect
+@export var invalide_slot : TextureRect
+@export var collision_area : Area2D
+
+signal slot_clicked(index:int, button : int)
+var threshold_distance : float = 0.1
+var velocity_threshold : float = 1000
+
+var slot_position : Vector2
+
+var slot_index : int = 0
+
+func _ready():
+	
+	get_parent_node()
+	connect_collision_signals()
+	if self.name == \"GrabbedSlot\":
+		disable_feedback()
+
+
+func set_slot_number(index:int) -> void:
+	slot_index = index
+	slot_Index_Text.text = str(index)
+
+	var parent_grid_container = get_parent() as GridContainer
+
+	if parent_grid_container:
+
+
+
+		var columns = parent_grid_container.columns
+		var cell_size = self.size
+		
+		var h_separation = parent_grid_container.get(\"theme_override_constants/h_separation\")
+		var v_separation = parent_grid_container.get(\"theme_override_constants/v_separation\")
+
+		var row = index / columns
+		var column = index % columns
+
+		var position_x = column * (cell_size.x + h_separation)
+		var position_y = row * (cell_size.y + v_separation)
+
+		position = Vector2(position_x, position_y)
+		slot_position = position
+
+
+func set_slot_data(slot_data: SlotData) -> void:
+
+	if slot_data == null:
+		texture_rect.texture = null
+		quantity_label.text = \"\"
+		tooltip_text = \"\"
+		return
+
+	if slot_data.item_data == null:
+		texture_rect.texture = null
+		quantity_label.text = \"\"
+		tooltip_text = \"\"
+		return
+		
+	else :
+		quantity_label.show()		
+		texture_rect.texture = slot_data.item_data.texture
+		texture_rect.show()
+		quantity_label.text = str(slot_data.quantity)
+		tooltip_text = \"%s\\n%s\" % [ slot_data.item_data.name, slot_data.item_data.description ]
+		hold_item_data = slot_data.item_data
+
+func _on_gui_input(event:InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT \\
+		and event.is_pressed():		
+				slot_clicked.emit(get_index(), event.button_index)
+				print(\" slot clicked index is \" + str(get_index()))				
+
+			
+func _on_mouse_entered() -> void:
+	pass
+#	change_color()
+
+func _on_mouse_exited() -> void:
+	var mouse_position = get_viewport().get_mouse_position()
+	var panel_rect = get_global_rect()
+	var mouse_velocity = Input.get_last_mouse_velocity()
+
+	if mouse_velocity.length() > velocity_threshold:
+		reset_color()
+
+	if is_mouse_beyond_threshold(mouse_position, panel_rect):
+		reset_color()
+			
+func change_color() -> void:
+	color_rect.color = Color(1,1,1,0.2)	
+
+func reset_color() -> void:
+	timer.wait_time = 0.1
+	timer.one_shot = true
+	timer.start()
+	await get_tree().create_timer(0.1).timeout	
+	color_rect.color = originalRectColor
+
+func is_mouse_beyond_threshold(mouse_position: Vector2, panel_rect: Rect2) -> bool:
+	return (mouse_position.x < panel_rect.position.x - threshold_distance or
+			mouse_position.y < panel_rect.position.y - threshold_distance or
+			mouse_position.x > panel_rect.end.x + threshold_distance or
+			mouse_position.y > panel_rect.end.y + threshold_distance)
+
+func connect_collision_signals() -> void:
+	collision_area.connect(\"area_entered\", Callable (self, \"_on_collision_detected\"))
+
+func _on_collision_detected(area: Area2D) -> void:
+		print(self.name, \" COLLISION with Area :\" + area.name )
+
+func disable_feedback() -> void:
+	valide_slot.hide()
+	invalide_slot.hide()
+
+func get_parent_node():
+	var parent_node = get_parent()
+	if parent_node != null:
+		print(\"parent node is \" + parent_node.name)
+	else:
+		return null
+	
+"
 
 [node name="multiple_slot" type="MarginContainer"]
 theme_override_constants/margin_left = 25
@@ -14,17 +156,11 @@ theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 columns = 6
 
-[node name="Slot" type="PanelContainer" parent="GridContainer" node_paths=PackedStringArray("texture_rect", "quantity_label", "color_rect", "timer", "multi_slot_Rect")]
+[node name="Slot" type="PanelContainer" parent="GridContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-script = ExtResource("1_w85g3")
-texture_rect = NodePath("MarginContainer/TextureRect")
-quantity_label = NodePath("QuantityLabel")
-color_rect = NodePath("MarginContainer/TextureRect/Control/ColorRect")
-timer = NodePath("Timer")
-originalRectColor = Color(0, 0, 0, 0)
-multi_slot_Rect = NodePath("MarginContainer/TextureRect/Control/multi_slot_Rect")
+script = SubResource("GDScript_m5qud")
 
 [node name="MarginContainer" type="MarginContainer" parent="GridContainer/Slot"]
 layout_mode = 2
@@ -80,4 +216,4 @@ text = "*99"
 [node name="Timer" type="Timer" parent="GridContainer/Slot"]
 wait_time = 0.1
 
-[connection signal="gui_input" from="GridContainer/Slot" to="GridContainer/Slot" method="_on_gui_input" flags=18]
+[connection signal="gui_input" from="GridContainer/Slot" to="GridContainer/Slot" method="_on_gui_input"]

@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Project Fortress"
+config/name="project_Fortress"
 run/main_scene="res://GameLevels/test_level.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="Survival_Horror_3d"
+project/assembly_name="project_Fortress"
 
 [input]
 
@@ -28,6 +28,6 @@ MoveTo={
 }
 ToggleInventory={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":105,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":73,"echo":false,"script":null)
 ]
 }

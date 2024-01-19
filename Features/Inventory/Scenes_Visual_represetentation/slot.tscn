@@ -1,22 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://2qjhofmd2j3u"]
 
-[ext_resource type="Script" path="res://Features/Inventory/Scripts/slot.gd" id="1_xdh0r"]
+[ext_resource type="Script" path="res://Features/Inventory_V2/scripts/slot.gd" id="1_idani"]
 [ext_resource type="Texture2D" uid="uid://chyfjcdl7eofq" path="res://icon.svg" id="3_qgd6i"]
 
-[node name="Slot" type="PanelContainer" node_paths=PackedStringArray("texture_rect", "quantity_label", "slot_Index_Text", "color_rect", "timer", "multi_slot_Rect")]
+[node name="Slot" type="PanelContainer" node_paths=PackedStringArray("slot_Index_Text")]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 62.0
+offset_bottom = 62.0
 scale = Vector2(1.002, 1)
-script = ExtResource("1_xdh0r")
-texture_rect = NodePath("MarginContainer/TextureRect")
-quantity_label = NodePath("QuantityLabel")
+script = ExtResource("1_idani")
 slot_Index_Text = NodePath("slot_index")
-color_rect = NodePath("MarginContainer/TextureRect/Control/ColorRect")
-timer = NodePath("Timer")
-originalRectColor = Color(0, 0, 0, 0)
-multi_slot_Rect = NodePath("MarginContainer/TextureRect/Control/multi_slot_Rect")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -25,14 +21,14 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+[node name="Item_texture" type="TextureRect" parent="MarginContainer"]
 visible = false
 y_sort_enabled = true
 layout_mode = 2
 texture = ExtResource("3_qgd6i")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="MarginContainer/TextureRect"]
+[node name="Color_rect_Control" type="Control" parent="MarginContainer/Item_texture"]
 layout_mode = 2
 anchors_preset = 0
 offset_left = -12.0
@@ -41,7 +37,7 @@ offset_right = 28.0
 offset_bottom = 28.0
 mouse_filter = 1
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/TextureRect/Control"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Item_texture/Color_rect_Control"]
 layout_mode = 0
 offset_left = 2.99402
 offset_top = 2.0
@@ -50,26 +46,6 @@ offset_bottom = 42.0
 scale = Vector2(1.43814, 1.4616)
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
-
-[node name="multi_slot_Rect" type="ColorRect" parent="MarginContainer/TextureRect/Control"]
-visible = false
-layout_mode = 0
-offset_left = 2.99402
-offset_top = 2.0
-offset_right = 42.994
-offset_bottom = 42.0
-scale = Vector2(1.43814, 1.4616)
-mouse_filter = 1
-color = Color(1, 0, 1, 1)
-
-[node name="QuantityLabel" type="Label" parent="."]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-text = "*99"
 
 [node name="slot_index" type="Label" parent="."]
 layout_mode = 2
@@ -82,5 +58,3 @@ text = "*99"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]

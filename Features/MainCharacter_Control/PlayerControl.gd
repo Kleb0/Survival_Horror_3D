@@ -35,7 +35,7 @@ func _process(delta):
 	
 func _input(event):
 
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and self.visible == true:
 		if Input.is_action_pressed("MoveTo"):			
 			if event.pressed:
 				set_direction()

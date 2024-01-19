@@ -1,15 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://c4d2gbyqpr7te"]
 
-[ext_resource type="Script" path="res://Features/Inventory/Scripts/item_data.gd" id="1_0rxge"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0dcab"]
-load_path = "res://.godot/imported/Book.png-bfd202b2ea0720759cb6deba5fcbaa04.bptc.ctex"
+[ext_resource type="Script" path="res://Features/Inventory/Scripts_test/item_data.gd" id="1_0rxge"]
+[ext_resource type="Texture2D" uid="uid://cbyk0bn2740ps" path="res://GameObjects/Book/Book.png" id="1_ys4g8"]
 
 [resource]
 script = ExtResource("1_0rxge")
 name = "Blue Book"
 description = "A Great Blue Book"
 stackable = true
-texture = SubResource("CompressedTexture2D_0dcab")
-isMultipleSlot = false
-multipleSlotSize = 0
+item_texture = ExtResource("1_ys4g8")
+isMultipleSlot = true
+numberofSlots = 4

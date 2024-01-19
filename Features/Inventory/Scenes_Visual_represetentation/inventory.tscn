@@ -1,28 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://8k75h8rf0fge"]
+[gd_scene load_steps=4 format=3 uid="uid://8k75h8rf0fge"]
 
-[ext_resource type="Script" path="res://Features/Inventory/Scripts/Inventory.gd" id="1_tbpx7"]
+[ext_resource type="Script" path="res://Features/Inventory_V2/scripts/Inventory.gd" id="1_blpk7"]
 [ext_resource type="PackedScene" uid="uid://2qjhofmd2j3u" path="res://Features/Inventory/Scenes_Visual_represetentation/slot.tscn" id="3_jowan"]
+[ext_resource type="Script" path="res://Features/Inventory_V2/scripts/items_control.gd" id="3_p3i53"]
 
 [node name="Inventory" type="PanelContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_tbpx7")
+offset_right = 454.0
+offset_bottom = 250.0
+mouse_filter = 2
+script = ExtResource("1_blpk7")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
-
-[node name="Control" type="Control" parent="MarginContainer"]
-layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 4
-theme_override_constants/v_separation = 4
-columns = 6
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 8
 
 [node name="Slot" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
 layout_mode = 2
@@ -78,6 +78,157 @@ layout_mode = 2
 [node name="Slot18" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
 layout_mode = 2
 
+[node name="Slot19" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot20" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot21" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot22" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot23" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot24" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot25" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot26" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot27" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot28" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot29" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot30" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot31" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot32" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot33" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot34" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot35" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot36" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot37" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot38" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot39" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot40" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot41" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot42" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot43" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot44" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot45" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot46" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot47" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot48" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot49" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot50" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot51" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot52" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot53" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot54" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot55" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot56" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot57" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot58" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot59" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot60" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot61" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot62" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot63" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Slot64" parent="MarginContainer/GridContainer" instance=ExtResource("3_jowan")]
+layout_mode = 2
+
+[node name="Items_Controller" type="Control" parent="MarginContainer" node_paths=PackedStringArray("gridContainer")]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("3_p3i53")
+gridContainer = NodePath("../GridContainer")
+
+[node name="RayCast2D" type="RayCast2D" parent="MarginContainer/Items_Controller"]
+position = Vector2(-4, 2)
+target_position = Vector2(0, 13)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+
 [node name="AvailableSlotNumber" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -89,3 +240,4 @@ text = "100"
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 0

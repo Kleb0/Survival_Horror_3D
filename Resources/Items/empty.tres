@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://du7hfx3x55mgb"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d33saf748e6lt"]
 
-[ext_resource type="Script" path="res://Features/Inventory/Scripts/item_data.gd" id="1_v0fp4"]
+[ext_resource type="Texture2D" uid="uid://cr443wum2s7kq" path="res://GameObjects/UI_graphics/Inventory_UI/empty_item.png" id="1_5yh42"]
+[ext_resource type="Script" path="res://Features/Inventory/Scripts_test/item_data.gd" id="1_y8p86"]
 
 [resource]
-script = ExtResource("1_v0fp4")
-name = "empty"
-description = "empty slot"
+script = ExtResource("1_y8p86")
+name = "Empty"
+description = "This slot is empty"
 stackable = false
+item_texture = ExtResource("1_5yh42")
+isMultipleSlot = false
+multipleSlotSize = 0
