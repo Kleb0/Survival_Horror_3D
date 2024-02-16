@@ -1,0 +1,201 @@
+[gd_scene load_steps=2 format=3 uid="uid://dykbwteb0wy0l"]
+
+[ext_resource type="PackedScene" uid="uid://2qjhofmd2j3u" path="res://Features/Inventory/Scenes_Visual_represetentation/slot.tscn" id="1_t1lgo"]
+
+[node name="Grid" type="GridContainer"]
+mouse_default_cursor_shape = 1
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 8
+
+[node name="Slot" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot2" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot3" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot4" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot5" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot6" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot7" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot8" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot9" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot10" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot11" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot12" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot13" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot14" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot15" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot16" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot17" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot18" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot19" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot20" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot21" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot22" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot23" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot24" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot25" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot26" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot27" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot28" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot29" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot30" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot31" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot32" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot33" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot34" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot35" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot36" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot37" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot38" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot39" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot40" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot41" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot42" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot43" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot44" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot45" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot46" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot47" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot48" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot49" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot50" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot51" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot52" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot53" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot54" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot55" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot56" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot57" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot58" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot59" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot60" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot61" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot62" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot63" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2
+
+[node name="Slot64" parent="." instance=ExtResource("1_t1lgo")]
+layout_mode = 2

@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://2qjhofmd2j3u"]
+[gd_scene load_steps=4 format=3 uid="uid://2qjhofmd2j3u"]
 
 [ext_resource type="Script" path="res://Features/Inventory_V2/scripts/slot.gd" id="1_idani"]
-[ext_resource type="Texture2D" uid="uid://chyfjcdl7eofq" path="res://icon.svg" id="3_qgd6i"]
+[ext_resource type="Texture2D" uid="uid://bfbvpeims4dl0" path="res://icon.svg" id="3_qgd6i"]
 
-[node name="Slot" type="PanelContainer" node_paths=PackedStringArray("slot_Index_Text")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66ugq"]
+size = Vector2(57.9042, 57)
+
+[node name="Slot" type="PanelContainer" node_paths=PackedStringArray("slot_Index_Text") groups=["slots"]]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 offset_left = -2.0
@@ -11,6 +14,7 @@ offset_top = -2.0
 offset_right = 62.0
 offset_bottom = 62.0
 scale = Vector2(1.002, 1)
+mouse_default_cursor_shape = 1
 script = ExtResource("1_idani")
 slot_Index_Text = NodePath("slot_index")
 
@@ -58,3 +62,10 @@ text = "*99"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(32.9242, 32.5)
+shape = SubResource("RectangleShape2D_66ugq")
+debug_color = Color(0, 0.639216, 0.34902, 0.419608)

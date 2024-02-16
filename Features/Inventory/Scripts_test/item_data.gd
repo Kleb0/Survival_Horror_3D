@@ -9,6 +9,7 @@ class_name ItemData
 @export var numberofSlots : int = 0
 var position_occupied : int 
 var positions_occupied : Array = []
+var slots_occupied : Array = []
 var position_in_grid : Vector2
 
 const ORIGINAL_SIZE : int = 64

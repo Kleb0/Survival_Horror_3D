@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=5 format=3 uid="uid://bwvi5jscy2scl"]
+
+[ext_resource type="Resource" uid="uid://dijcuw0jhol7b" path="res://Resources/Items/Apple.tres" id="1_l3w74"]
+[ext_resource type="Script" path="res://Features/Inventory_V2/scripts/inventory_data.gd" id="2_b7tvn"]
+[ext_resource type="Resource" uid="uid://c4d2gbyqpr7te" path="res://Resources/Items/Book.tres" id="2_upc5k"]
+[ext_resource type="Resource" uid="uid://gjwbvk2qgxxs" path="res://Resources/Items/Rifle.tres" id="3_cdspv"]
+
+[resource]
+script = ExtResource("2_b7tvn")
+item_instances_array = [ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("2_upc5k"), ExtResource("2_upc5k"), ExtResource("2_upc5k"), ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("3_cdspv"), ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("1_l3w74"), ExtResource("1_l3w74")]

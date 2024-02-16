@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://gjwbvk2qgxxs"]
+
+[ext_resource type="Script" path="res://Features/Inventory/Scripts_test/item_data.gd" id="1_8lvf2"]
+[ext_resource type="Texture2D" uid="uid://u68w8yq6b2yk" path="res://GameObjects/Rifle/Rifle.png" id="1_q3a7t"]
+
+[resource]
+script = ExtResource("1_8lvf2")
+name = "Rifle"
+description = "A modern rifle, deals damage"
+stackable = false
+item_texture = ExtResource("1_q3a7t")
+isMultipleSlot = true
+numberofSlots = 8
